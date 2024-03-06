@@ -1,0 +1,33 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Sobre Nosotros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>Amantes de la buena cocina</h1>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus suscipit expedita at, ducimus veritatis enim praesentium asperiores vero quam dolorum autem dolores quod eos. Quisquam nesciunt error fugit consequuntur illo!</p>
+</ion-content>
+
+<div id="mapId" style="width:90%; height:40%; "></div>
+
+<ion-tabs>
+  <ion-button (click)="hacerLlamada()">
+    <ion-icon name="call"></ion-icon>Llamar</ion-button>
+
+  <ion-tab-bar slot="bottom">
+    
+    <!-- Pestaña home -->
+  <ion-tab-button tab="home">
+    <ion-icon name="triangle"></ion-icon>
+    <ion-label>Inicio</ion-label>
+  </ion-tab-button>
+  <!-- Pestaña detalle -->
+  <ion-tab-button tab="info">
+    <ion-icon name="ellipse"></ion-icon>
+    <ion-label>Sobre nosotros</ion-label>
+  </ion-tab-button>
+ 
+
+  

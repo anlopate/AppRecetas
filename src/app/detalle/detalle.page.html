@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Detalle Receta</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- <ion-label>Título</ion-label>
+  <ion-input [(ngModel)]="recetaEditando.titulo"></ion-input>
+
+  <ion-label>Descripción</ion-label>
+  <ion-input [(ngModel)]="recetaEditando.descripcion"></ion-input>
+
+  <ion-label>Ingredientes</ion-label>
+  <ion-input [(ngModel)]="recetaEditando.ingredientes"></ion-input>
+
+  <ion-button (click)="clicBotonInsertar()">Añadir Receta</ion-button>
+  <ion-button (click)="clicBotonBorrar()">Borrar Receta</ion-button>
+  <ion-button (click)="clicBotonModificar()">Modificar Receta</ion-button> -->
+
+  <!-- <ion-item *ngIf="!new">
+    <ion-label position="floating">ID receta</ion-label>
+    <br>
+  </ion-item> -->
+
+  <ion-item>
+    <ion-label position="floating">Título</ion-label>
+    <br>
+    <ion-input [(ngModel)]="document.data.titulo" name="titulo" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <br>
+    <ion-input [(ngModel)]="document.data.descripcion" name="descripcion" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button *ngIf="new == false" id="alert">Borrar Receta</ion-button>
+  <ion-alert 
+      trigger="alert"
+          header="¿Seguro que quieres borrar?"
+          [buttons]="alertButtons"
+          ></ion-alert>
+  <ion-button *ngIf="!new" (click)="clicBotonModificar()">Modificar Receta</ion-button>
+  <ion-button *ngIf="new"  (click)="clicBotonInsertar()">Añadir Receta</ion-button>
+  <ion-button   (click)="seleccionarImagen()">Seleccionar Imagen</ion-button>
+ 
+  
+  <ion-button (click)="subirImagen()">Subir Imagen</ion-button>
+  <ion-button (click)="eliminarArchivo(document.data.imagenURL)">Eliminar Imagen</ion-button>
+  <ion-button (click)="share()">RRSS</ion-button>
+
+
+  
+  
+<img src={{imagenSelec}} alt="Imagen seleccionada">
+ 
+</ion-content>

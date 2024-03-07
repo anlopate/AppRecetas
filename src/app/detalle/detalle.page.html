@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>detalle</ion-title>
+  <ion-toolbar color="mycolor">
+    <ion-title>Nueva receta</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -28,37 +28,38 @@
     <ion-label position="floating">ID receta</ion-label>
     <br>
   </ion-item> -->
-
   <ion-item>
     <ion-label position="floating">Título</ion-label>
     <br>
     <ion-input [(ngModel)]="document.data.titulo" name="titulo" type="text"></ion-input>
   </ion-item>
-
+  
   <ion-item>
     <ion-label position="floating">Descripción</ion-label>
     <br>
     <ion-input [(ngModel)]="document.data.descripcion" name="descripcion" type="text"></ion-input>
   </ion-item>
-
+  
+  <div class="botones">
   <ion-button *ngIf="new == false" id="alert">Borrar Receta</ion-button>
   <ion-alert 
       trigger="alert"
           header="¿Seguro que quieres borrar?"
           [buttons]="alertButtons"
           ></ion-alert>
-  <ion-button *ngIf="!new" (click)="clicBotonModificar()">Modificar Receta</ion-button>
-  <ion-button *ngIf="new"  (click)="clicBotonInsertar()">Añadir Receta</ion-button>
-  <ion-button   (click)="seleccionarImagen()">Seleccionar Imagen</ion-button>
+  <ion-button  *ngIf="!new" (click)="clicBotonModificar()">Modificar Receta</ion-button>
+  <ion-button color="medium" shape="round" *ngIf="new"  (click)="clicBotonInsertar()">Añadir Receta</ion-button>
+  <ion-button  color="medium" shape="round" (click)="seleccionarImagen()">Seleccionar Imagen</ion-button>
+  <div class="ion-activatable ripple-parent rounded-rectangle">
+    <ion-ripple-effect></ion-ripple-effect>
+  </div>
+  
+  <ion-button color="medium" shape="round"  (click)="subirImagen()">Subir Imagen</ion-button>
+  <ion-button color="medium" shape="round" (click)="share()">RRSS</ion-button>
+  <ion-button color="danger" shape="round" (click)="eliminarArchivo(document.data.imagenURL)">Eliminar Imagen</ion-button>
  
-  
-  <ion-button (click)="subirImagen()">Subir Imagen</ion-button>
-  <ion-button (click)="eliminarArchivo(document.data.imagenURL)">Eliminar Imagen</ion-button>
-  <ion-button (click)="share()">RRSS</ion-button>
+</div>
 
-
-  
-  
-<img src={{imagenSelec}} alt="Imagen seleccionada">
+<img class="imagen" src={{imagenSelec}} alt="Imagen seleccionada">
  
 </ion-content>

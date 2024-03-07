@@ -1,6 +1,6 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
+<ion-header  [translucent]="true">
+  <ion-toolbar color="mycolor">
+    <ion-title text-center>
       RECETARIO
     </ion-title>
   </ion-toolbar>
@@ -13,11 +13,13 @@
         <ion-title size="large">Ejemplo Recetas</ion-title>
       </ion-toolbar>
     </ion-header>
-    <h1>LISTA DE RECETAS</h1>
-    <ion-list>
+    <ion-title id="lista" color="mycolor">
+      <h1 >LISTA DE RECETAS</h1>
+    </ion-title>
+    <ion-list color="mycolor">
       <ion-item *ngFor="let documentReceta of arrayColeccionRecetas" (click)="selecReceta(documentReceta.id, documentReceta.receta)">
         <ion-grid>
-          <ion-row>
+          <ion-row class="titulo">
             <h2>{{ documentReceta.receta.titulo }}</h2>
           </ion-row>
           <ion-row>
@@ -32,9 +34,9 @@
 
   
     
-    <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab  slot="fixed" horizontal="end" vertical="bottom">
       <ion-fab-button  [routerLink]="['/detalle/new']">
-        <ion-icon name="add"></ion-icon>
+        <ion-icon  class="add" name="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
     

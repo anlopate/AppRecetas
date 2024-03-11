@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Receta} from '../receta'
 import { FirestoreService } from '../firestore.service';
 import { Router } from '@angular/router';
+import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 
 
 
@@ -19,7 +20,7 @@ export class HomePage {
   }];
   idRecetaSelec: string = "";
 
-  constructor(private firestoreService: FirestoreService, private router: Router) {
+  constructor(private firestoreService: FirestoreService, private router: Router,private callNumber: CallNumber) {
     this.obtenerListaRecetas()
   }
 
@@ -76,6 +77,13 @@ export class HomePage {
 
   clicBotonNosotros(){
     this.router.navigate(['info']);
+  }
+  
+  hacerLlamada(){
+    this.callNumber.callNumber("677527637", true)
+     .then(res => console.log('Llamada realizada', res))
+     .catch(err => console.log('Error en la llamada', err));
+
   }
  
 }

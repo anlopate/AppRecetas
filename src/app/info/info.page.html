@@ -6,28 +6,35 @@
 </ion-header>
 
 <ion-content  class="ion-padding">
-  <ion-title class="amantes"><h1>Amantes de la buena cocina</h1></ion-title>
+  <ion-title class="titulo"><h3>
+    
+  </h3></ion-title>
   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus suscipit expedita at, ducimus veritatis enim praesentium asperiores vero quam dolorum autem dolores quod eos. Quisquam nesciunt error fugit consequuntur illo!</p>
   <div id="mapId" style="width:90%; height:50%; margin-left:20px "></div>
 </ion-content>
 
 
-<ion-tabs>
-  <ion-button class="llamar" color="medium"  shape="round" (click)="hacerLlamada()">
-    <ion-icon  name="call"></ion-icon>Llamar</ion-button>
+<!-- <ion-button class="llamar" color="medium"  shape="round" (click)="hacerLlamada()">Llamar</ion-button> -->
 
-  <ion-tab-bar slot="bottom">
-    
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
     <!-- Pestaña home -->
   <ion-tab-button tab="home">
-    <ion-icon name="triangle"></ion-icon>
+    <ion-icon name="triangle" (click)="clicBotonHome()"></ion-icon>
     <ion-label>Inicio</ion-label>
   </ion-tab-button>
   <!-- Pestaña detalle -->
   <ion-tab-button tab="info">
-    <ion-icon name="ellipse"></ion-icon>
+    <ion-icon name="ellipse" ></ion-icon>
     <ion-label>Sobre nosotros</ion-label>
   </ion-tab-button>
- 
+  <ion-tab-button tab="info">
+    <ion-icon name="call" (click)="hacerLlamada()">Llamar</ion-icon>
+    <ion-label></ion-label>
+  </ion-tab-button>
+  
+
+</ion-tab-bar>
+ </ion-tabs>
 
   

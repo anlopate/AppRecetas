@@ -40,7 +40,7 @@
     <ion-input [(ngModel)]="document.data.descripcion" name="descripcion" type="text"></ion-input>
   </ion-item>
   
-  <div class="botones">
+  <div class="botonesReceta">
   <ion-button *ngIf="new == false" id="alert">Borrar Receta</ion-button>
   <ion-alert 
       trigger="alert"
@@ -49,17 +49,13 @@
           ></ion-alert>
   <ion-button  *ngIf="!new" (click)="clicBotonModificar()">Modificar Receta</ion-button>
   <ion-button color="medium" shape="round" *ngIf="new"  (click)="clicBotonInsertar()">Añadir Receta</ion-button>
+  <!-- <ion-button color="medium" shape="round"  (click)="subirImagen()">Subir Imagen</ion-button> -->
+  <ion-button color="medium" shape="round" (click)="share()">Enviar Email</ion-button>
   <ion-button  color="medium" shape="round" (click)="seleccionarImagen()">Seleccionar Imagen</ion-button>
-  <div class="ion-activatable ripple-parent rounded-rectangle">
-    <ion-ripple-effect></ion-ripple-effect>
-  </div>
-  
-  <ion-button color="medium" shape="round"  (click)="subirImagen()">Subir Imagen</ion-button>
-  <ion-button color="medium" shape="round" (click)="share()">RRSS</ion-button>
+  <!-- <p style="color:(var(--ion-color-mycolor));padding-left: 50px;">Imagen de la receta</p> -->
+  <img class="imagen" src={{imagenSelec}} >
   <ion-button color="danger" shape="round" (click)="eliminarArchivo(document.data.imagenURL)">Eliminar Imagen</ion-button>
- 
 </div>
-
-<img class="imagen" src={{imagenSelec}} alt="Imagen seleccionada">
  
 </ion-content>
+

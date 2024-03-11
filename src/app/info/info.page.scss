@@ -1,17 +1,20 @@
 ion-toolbar{
     background-color: var(--ion-color-mycolor);
     align-content: center;
+    color:white;
     }
-    .amantes{
+    .titulo{
         background-color: var(--ion-color-mycolor-shade);
         color: white;
     } 
 
-    .llamar{
-        width: 30%;
-       
-    }
-
     ion-icon{
         color: var(--ion-color-mycolor-shade);
     }
+
+    // .llamar{
+    //     margin-top: 10px;
+    //     ion-icon .llamar{
+    //         color: white;
+    //     }
+    

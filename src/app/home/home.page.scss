@@ -2,14 +2,17 @@
 ion-toolbar{
 background-color: var(--ion-color-mycolor);
 align-content: center;
+color: white;
 }
 #lista{
-    background-color: var(--ion-color-mycolor-shade);
+    background-color:var(--ion-color-mycolor-shade);;
     color: white;
+    
 }
 .titulo{
-    background-color: var(--ion-color-mycolor-tint);
-    color: white ;
+    font-style: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--ion-color-mycolor-tint);
 }
 ion-icon{
     color: var(--ion-color-mycolor-shade);
@@ -19,3 +22,6 @@ ion-fab-button .add {
     color: white !important;
 }
 
+ion-row .tres{
+    border-bottom: var( --ion-color-mycolor-tint) solid 2px;
+}

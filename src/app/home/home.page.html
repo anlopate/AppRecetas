@@ -25,7 +25,7 @@
           <ion-row>
             <p>{{ documentReceta.receta.descripcion }}</p>
           </ion-row>
-          <ion-row>
+          <ion-row class="fixed">
             <p>{{ documentReceta.receta.ingredientes }}</p>
           </ion-row>
         </ion-grid>
@@ -34,12 +34,11 @@
 
   
     
-    <ion-fab  slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab  slot="fixed" horizontal="end" vertical="center">
       <ion-fab-button  [routerLink]="['/detalle/new']">
-        <ion-icon  class="add" name="add"></ion-icon>
+        <ion-icon color="mycolor" class="add" name="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
-    
   </ion-content>
   <!-- Añadir pestañas -->
   
@@ -55,6 +54,10 @@
     <ion-tab-button tab="info">
       <ion-icon name="ellipse" (click)="clicBotonNosotros()"></ion-icon>
       <ion-label>Sobre nosotros</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="info">
+      <ion-icon name="call" (click)="hacerLlamada()">Llamar</ion-icon>
+      <ion-label></ion-label>
     </ion-tab-button>
     
   </ion-tab-bar>

@@ -8,6 +8,7 @@ import {  ToastController } from '@ionic/angular';
 import { ImagePicker } from '@awesome-cordova-plugins/image-picker/ngx';
 import {  NavController } from '@ionic/angular';
 import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
+import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 
 
 
@@ -28,7 +29,7 @@ export class DetallePage implements OnInit {
     data: {} as Receta};
  
 
-  constructor(private activatedRoute: ActivatedRoute, private firestoreService: FirestoreService, private router: Router, private loadingController: LoadingController, private toastController: ToastController, private imagePicker: ImagePicker, private socialSharing: SocialSharing) {}
+  constructor(private activatedRoute: ActivatedRoute, private firestoreService: FirestoreService, private router: Router, private loadingController: LoadingController, private toastController: ToastController, private imagePicker: ImagePicker, private socialSharing: SocialSharing,private callNumber: CallNumber) {}
 
   ngOnInit() {
     let idRecibido = this.activatedRoute.snapshot.paramMap.get('id');
@@ -52,7 +53,7 @@ export class DetallePage implements OnInit {
         this.new = true;
       }
  
-}
+    }
 
     clicBotonBorrar() {
       this.firestoreService.borrar("recetas", this.document.id).then(() => {
@@ -64,7 +65,7 @@ export class DetallePage implements OnInit {
       this.router.navigate(['/home']);
     }
 
-   
+
     clicBotonModificar() {
       this.firestoreService.modificar("recetas", this.document.id, this.document.data).then(() => {
         console.log('Receta modificada correctamente!');
@@ -190,6 +191,19 @@ share() {
   this.socialSharing.share(message,subject);
 }
 
+clicBotonNosotros(){
+  this.router.navigate(['info']);
+}
 
+clicBotonHome(){
+  this.router.navigate(['home']);
+}
 
+hacerLlamada(){
+  this.callNumber.callNumber("677527637", true)
+   .then(res => console.log('Llamada realizada', res))
+   .catch(err => console.log('Error en la llamada', err));
+
+}
+  
 }

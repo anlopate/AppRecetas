@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 import * as L from 'leaflet';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info',
@@ -9,9 +10,10 @@ import * as L from 'leaflet';
 })
 export class InfoPage {
 
+
   map: any;
 
-  constructor(private callNumber: CallNumber) { }
+  constructor(private callNumber: CallNumber,private router: Router) { }
 
     hacerLlamada(){
       this.callNumber.callNumber("677527637", true)
@@ -31,5 +33,9 @@ export class InfoPage {
       this.map = L.map("mapId").setView([latitud, longitud], zoom);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
           .addTo(this.map);
+    }
+
+    clicBotonHome(){
+      this.router.navigate(['home']);
     }
 }

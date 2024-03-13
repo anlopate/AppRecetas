@@ -41,11 +41,16 @@ export class HomePage {
   }
 
   selecReceta(idReceta:string, recetaSelec:Receta) {
+    console.log("inicio");
     this.recetaEditando = recetaSelec;
     this.idRecetaSelec = idReceta;
+    console.log(this.idRecetaSelec);
     this.router.navigate(['detalle', this.idRecetaSelec]);
+    console.log("FInal");
 
   }
+  
+ 
 
   // clicBotonInsertar() {
     

@@ -41,13 +41,13 @@
   </ion-item>
   
   <div class="botonesReceta">
-  <ion-button color="medium" shape="round" *ngIf="new" id="alert">Borrar Receta</ion-button>
+  <ion-button color="medium" shape="round" *ngIf="!new" id="alert">Borrar Receta</ion-button>
   <ion-alert 
       trigger="alert"
           header="¿Seguro que quieres borrar?"
           [buttons]="alertButtons"
           ></ion-alert>
-  <ion-button  *ngIf="!new" (click)="clicBotonModificar()">Modificar Receta</ion-button>
+  <ion-button  *ngIf="!new" color="medium" shape="round"  (click)="clicBotonModificar()">Modificar Receta</ion-button>
   <ion-button color="medium" shape="round" *ngIf="new"  (click)="clicBotonInsertar()">Añadir Receta</ion-button>
   <!-- <ion-button color="medium" shape="round"  (click)="subirImagen()">Subir Imagen</ion-button> -->
   <ion-button color="medium" shape="round" (click)="share()">Enviar Email</ion-button>
@@ -59,4 +59,26 @@
  
 </ion-content>
 
-
+ <!-- Añadir pestañas -->
+ <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      
+      <!-- Pestaña home -->
+    <ion-tab-button tab="home">
+      <ion-icon name="triangle"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button> 
+    <!-- Pestaña detalle -->
+    <ion-tab-button tab="info">
+      <ion-icon name="ellipse" (click)="clicBotonNosotros()"></ion-icon>
+      <ion-label>Sobre nosotros</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="info">
+      <ion-icon name="call" (click)="hacerLlamada()">Llamar</ion-icon>
+      <ion-label></ion-label>
+    </ion-tab-button> 
+    
+  </ion-tab-bar>
+</ion-tabs> 
+</ion-toolbar>

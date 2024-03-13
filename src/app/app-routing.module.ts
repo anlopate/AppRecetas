@@ -16,9 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
   },
   {
-    path: 'detalle/:editar',
-    loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
-  },  {
     path: 'info',
     loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
   },

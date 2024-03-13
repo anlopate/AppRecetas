@@ -18,7 +18,8 @@
     </ion-title>
     <ion-list color="mycolor">
       <ion-item *ngFor="let documentReceta of arrayColeccionRecetas" (click)="selecReceta(documentReceta.id, documentReceta.receta)">
-        <ion-grid>
+     
+          <ion-grid>
           <ion-row class="titulo">
             <h2>{{ documentReceta.receta.titulo }}</h2>
           </ion-row>
@@ -41,7 +42,7 @@
     </ion-fab>
   </ion-content>
   <!-- Añadir pestañas -->
-  
+  <ion-toolbar>
   <ion-tabs>
     <ion-tab-bar slot="bottom">
       
@@ -49,7 +50,7 @@
     <ion-tab-button tab="home">
       <ion-icon name="triangle"></ion-icon>
       <ion-label>Inicio</ion-label>
-    </ion-tab-button>
+    </ion-tab-button> 
     <!-- Pestaña detalle -->
     <ion-tab-button tab="info">
       <ion-icon name="ellipse" (click)="clicBotonNosotros()"></ion-icon>
@@ -58,7 +59,8 @@
     <ion-tab-button tab="info">
       <ion-icon name="call" (click)="hacerLlamada()">Llamar</ion-icon>
       <ion-label></ion-label>
-    </ion-tab-button>
+    </ion-tab-button> 
     
   </ion-tab-bar>
-</ion-tabs>
+</ion-tabs> 
+</ion-toolbar>

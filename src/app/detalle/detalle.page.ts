@@ -191,6 +191,7 @@ share() {
   this.socialSharing.share(message,subject);
 }
 
+
 clicBotonNosotros(){
   this.router.navigate(['info']);
 }
@@ -205,5 +206,4 @@ hacerLlamada(){
    .catch(err => console.log('Error en la llamada', err));
 
 }
-  
 }
